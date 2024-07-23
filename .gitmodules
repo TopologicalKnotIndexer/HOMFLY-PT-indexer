@@ -1,0 +1,9 @@
+[submodule "src/HOMFLY-PT-solver"]
+	path = src/HOMFLY-PT-solver
+	url = git@github.com:TopologicalKnotIndexer/HOMFLY-PT-solver.git
+[submodule "src/HOMFLY-PT-polynomial-list"]
+	path = src/HOMFLY-PT-polynomial-list
+	url = git@github.com:TopologicalKnotIndexer/HOMFLY-PT-polynomial-list.git
+[submodule "src/slow_dict_reader"]
+	path = src/slow_dict_reader
+	url = git@github.com:TopologicalKnotIndexer/slow_dict_reader.git
