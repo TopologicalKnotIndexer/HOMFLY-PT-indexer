@@ -12,6 +12,7 @@ sys.path.insert(0, str(SRC))
 from de_r1_k8 import de_r1_k8  # noqa: E402
 from homflypt_solver import _build_sage_code, homflypt_solver  # noqa: E402
 from input_sanity import input_sanity  # noqa: E402
+from sage_run_interface import _sage_command  # noqa: E402
 
 
 TREFOIL = [[1, 5, 2, 4], [3, 1, 4, 6], [5, 3, 6, 2]]
@@ -30,6 +31,23 @@ class HomflySolverTests(unittest.TestCase):
         self.assertEqual(result, "P(L,M)")
         _, kwargs = run.call_args
         self.assertEqual(kwargs, {"sage_path": "custom-sage", "timeout": 3.5})
+
+    def test_wsl_sage_uri_builds_direct_exec_command(self):
+        uri = "wsl://Ubuntu-26.04/home/neko/miniforge3/envs/math_env/bin/sage"
+        with patch(
+            "sage_run_interface.shutil.which",
+            side_effect=lambda name: "wsl.exe" if name == "wsl.exe" else None,
+        ):
+            self.assertEqual(
+                _sage_command(uri),
+                [
+                    "wsl.exe",
+                    "-d",
+                    "Ubuntu-26.04",
+                    "-e",
+                    "/home/neko/miniforge3/envs/math_env/bin/sage",
+                ],
+            )
 
     def test_unknot_avoids_backend(self):
         with patch("homflypt_solver.sage_run") as run:

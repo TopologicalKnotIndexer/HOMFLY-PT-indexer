@@ -9,6 +9,10 @@ TopologicalKnotIndexer HOMFLY-PT polynomial catalog.
 - Python 3.10 or newer
 - SageMath with the `sage` command on `PATH`, or an explicit executable path
 
+On Windows, an installed WSL Sage can be selected with a structured URI such
+as `wsl://Ubuntu-26.04/home/user/miniforge3/envs/math_env/bin/sage`. The WSL
+launcher uses direct execution rather than a shell command string.
+
 No third-party package is required by the ordinary Python interpreter. This
 repository is independently cloneable and contains regular tracked copies of
 all organization-owned helper source; it does not require Git submodules.
@@ -58,8 +62,9 @@ are listed in `VENDORED_DEPENDENCIES.md`.
 
 ## Development
 
-Tests use a fake Sage backend for deterministic contract coverage and do not
-require SageMath:
+The default suite uses a fake Sage backend for deterministic contract coverage.
+Set `TKI_SAGE_EXECUTABLE` to include real SageMath calculations of the trefoil
+and figure-eight catalog polynomials:
 
 ```bash
 python -m unittest discover -s tests -v

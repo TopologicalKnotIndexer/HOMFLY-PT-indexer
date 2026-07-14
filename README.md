@@ -12,6 +12,9 @@ repository's catalog—not that the input is invalid.
 - Python 3.10 or newer
 - SageMath (`sage` on `PATH`, or pass an explicit path)
 
+On Windows, `--sage` and `sage_path` also accept a WSL URI such as
+`wsl://Ubuntu-26.04/home/user/miniforge3/envs/math_env/bin/sage`.
+
 The unknot fast path does not start SageMath. The repository is independently
 cloneable: all organization dependencies are regular tracked files, not Git
 submodules. Bash is not required by the Python orchestration.
@@ -65,5 +68,7 @@ no code modifies `sys.path` or invokes Git submodule commands. See
 python -m unittest discover -s tests -v
 ```
 
-The end-to-end unknot test does not require SageMath. No PyPI publication is
-performed as part of repository maintenance.
+The end-to-end unknot test does not require SageMath. Set
+`TKI_SAGE_EXECUTABLE` to include real Sage calculations and catalog lookups for
+the trefoil and figure-eight knot. No PyPI publication is performed as part of
+repository maintenance.
