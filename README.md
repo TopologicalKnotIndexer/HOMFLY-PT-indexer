@@ -10,10 +10,8 @@ repository's catalog—not that the input is invalid.
 ## Requirements
 
 - Python 3.10 or newer
-- SageMath (`sage` on `PATH`, or pass an explicit path)
-
-On Windows, `--sage` and `sage_path` also accept a WSL URI such as
-`wsl://Ubuntu-26.04/home/user/miniforge3/envs/math_env/bin/sage`.
+- SageMath (`sage` on `PATH`, or pass an explicit executable path through
+  `--sage` or `sage_path`)
 
 The unknot fast path does not start SageMath. The repository is independently
 cloneable: all organization dependencies are regular tracked files, not Git

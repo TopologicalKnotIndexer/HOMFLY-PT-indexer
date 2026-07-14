@@ -4,7 +4,7 @@ This repository is self-contained. Former Git submodules are tracked as regular 
 
 | Path | Source | Pinned commit |
 | --- | --- | --- |
-| `src/x86_64-sage-minimal` | [x86_64-sage-minimal](https://github.com/TopologicalKnotIndexer/x86_64-sage-minimal) | `89e585fadcfa3181a1f3f4db2293e1b849142362` |
+| `src/x86_64-sage-minimal` | [x86_64-sage-minimal](https://github.com/TopologicalKnotIndexer/x86_64-sage-minimal) | `2ef56216b923b9056bbca1d5a042b06d5732d182` |
 | `src/pd_code_de_r1_k8` | [pd_code_de_r1_k8](https://github.com/TopologicalKnotIndexer/pd_code_de_r1_k8) | `395d0b272a06e90c28db90a38803412e8eb9edb5` |
 | `src/pd_code_input_sanity` | [pd_code_input_sanity](https://github.com/TopologicalKnotIndexer/pd_code_input_sanity) | `9f0233a3b48043a9e164d98ad6cee644cc792a28` |
 
